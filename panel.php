@@ -22,7 +22,7 @@ if($_SESSION["token"] != $rslt["token"] || !isset($_SESSION["token"])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,7 +41,7 @@ if($_SESSION["token"] != $rslt["token"] || !isset($_SESSION["token"])){
         <div class="btn" onclick="window.location.href='./edit.php';">
             Sécurité
         </div>
-
+        <h3><?php echo  isset($_GET["msg"]) ? $_GET["msg"] : ""; ?></h3>
         <div class="table">
             
             <form action="my_label.php" class="mylabel" method="post">

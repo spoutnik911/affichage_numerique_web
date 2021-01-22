@@ -5,7 +5,7 @@ require("./var_config.php");
 
 $conn = new PDO("mysql:host=$mysql_host;dbname=$mysql_database;port=$mysql_port;", $mysql_username, $mysql_password);
 
-$query = $conn->prepare("SELECT token, id, totp_key FROM comptes WHERE username=:user");
+$query = $conn->prepare("SELECT token, id FROM comptes WHERE username=:user");
 $query->execute([
     ":user" => $_SESSION["username"]
 ]);
@@ -17,9 +17,31 @@ if($_SESSION["token"] != $rslt["token"] || !isset($_SESSION["token"])){
     return;
 }
 
-if($_SESSION["username"] == "testeur") header("Location: ./edit.php?msg=Vous+ne+pouvez+pas+changez+un+compte+de+teste"); return;
 
-if(!empty($_POST["password1"]) && !empty($_POST["password0"]) && $_POST["password1"] == $_POST["password2"] && isset($_POST["password1"]) && isset($_POST["password0"]) && isset($_POST["password2"])){
+if($_SESSION["username"] == "testeur"){ header("Location: ./edit.php?msg=Vous+ne+pouvez+pas+modifier+le+compte+de+teste"); return; }
+
+elseif(isset($_GET["deleteaccount"])){
+    echo "pass";
+        try{
+            $query = $conn->prepare("DELETE FROM labels WHERE user_id=:id");
+            $query->execute([
+                ":id" => $rslt["id"]
+            ]);
+    
+            $query = $conn->prepare("DELETE FROM comptes WHERE id=:id");
+            $query->execute([
+                ":id" => $rslt["id"]
+            ]);
+    
+            session_destroy();
+            header("Location: ./index.php?msg=Compte+supprimé");
+        }
+        catch(PDOException $e){
+            header("Location: ./edit.php?msg=Erreur+serveur");
+        }
+        return;
+}
+elseif(!empty($_POST["password1"]) && !empty($_POST["password0"]) && $_POST["password1"] == $_POST["password2"] && isset($_POST["password1"]) && isset($_POST["password0"]) && isset($_POST["password2"])){
 
     if(sizeof(str_split($_POST["password1"])) < 20){ header("Location: ./edit.php?msg=20+caract%C3%A8res+minimum"); return;}
     if(preg_match_all("/[0-9]/", $_POST["password1"]) < 2){ header("Location: ./edit.php?msg=2+Chffres+minimum"); return;}
@@ -57,9 +79,6 @@ if(!empty($_POST["password1"]) && !empty($_POST["password0"]) && $_POST["passwor
 else{
     header("Location: ./edit.php?msg=Champ+menquant");
 }
-
-
-
 
 
 

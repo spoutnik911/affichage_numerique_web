@@ -16,6 +16,7 @@ if($_SESSION["token"] != $rslt["token"]){
     header("Location: ./index.html");
     return;
 }
+if($_SESSION["username"] == "testeur"){ header("Location: ./panel.php?msg=Vous+ne+pouvez+pas+modifier+le+compte+de+teste"); return; }
 
 
 if(isset($_POST["action"])){

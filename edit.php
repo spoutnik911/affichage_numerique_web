@@ -21,7 +21,7 @@ if($_SESSION["token"] != $rslt["token"] || !isset($_SESSION["token"])){
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,10 +29,17 @@ if($_SESSION["token"] != $rslt["token"] || !isset($_SESSION["token"])){
     <title>Affichage numérique | <?php echo $_SESSION["username"]; ?> (édition)</title>
 </head>
 <body>
-        
+        <script>
+            function check(){
+                if(window.confirm("Vous-êtes sur ?")) window.location.href='./edit_back.php?deleteaccount';
+            }
+        </script>
     <div class="panel">
         <div class="btn" onclick="window.location.href='./panel.php';">
             Retour
+        </div>
+        <div class="btn" onclick="check()">
+            Supprimer mon compte
         </div>
 
         <h1>Compte: <?php echo $_SESSION["username"]; ?></h1>
