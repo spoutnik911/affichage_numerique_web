@@ -31,6 +31,9 @@ if($_SESSION["token"] != $rslt["token"] || !isset($_SESSION["token"])){
 <body>
         
     <div class="panel">
+        <div class="btn" onclick="window.location.href='./panel.php';">
+            Retour
+        </div>
 
         <h1>Compte: <?php echo $_SESSION["username"]; ?></h1>
         <form action="login.php" method="POST">
