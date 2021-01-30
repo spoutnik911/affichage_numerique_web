@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style.css">
+    <style>
+        body, html{
+            height: max-content;
+        }
+    </style>
     <title>Mentions légales</title>
 </head>
 <body>
@@ -11,25 +16,28 @@
         Retour
     </div>
     <div class="legal">
-        Cette webapp crée des cookies de session. Pour savoir si vous êtes ou non connecté, savoir qui vous êtes et empêcher quelqu'un d'autre d'utiliser votre compte.<br/>
+        Cette webapp crée des cookies de session, pour savoir si vous êtes ou non connecté, savoir qui vous êtes et empêcher quelqu'un d'autre d'utiliser votre compte.<br/>
         <br/>
-        Une base de donnée contient nom d'utilisateur, mot de passe hashé (algorithme permettant de rendre un mot de passe illisible), étiquettes, adresse mail, vos tentatives de connexions, et l'instant t de déblocage temporaire de votre compte après un nombre trop grand de tentatives. Si vous avez été bloqué, vous pouvez me demander en personne votre déblocage ou m'envoyer un mail avec la même adresse qui a été enregistrée sur votre compte. Je n'acceperais la demande par mail que s'elle est signé par un certificat SSL (protocole de sécurité informatique, la grande majoritée des service de messagerie le fait) pour que je puisse savoir que vous êtes bien la personne possédant ledit compte.<br/>
+        Une base de donnée contient nom d'utilisateur, mot de passe hashé (algorithme permettant de rendre un mot de passe illisible), étiquettes(message déposé dans le tableau de bord), adresse mail, vos tentatives de connexions, et l'instant t de déblocage temporaire de votre compte après un nombre trop grand de tentatives. Si vous avez été bloqué, vous pouvez me demander en personne votre déblocage ou m'envoyer un mail avec la même adresse qui a été enregistrée sur votre compte. Je n'acceperais la demande par mail que si elle est signé par un certificat SSL (algorithme de sécurité informatique, la grande majoritée des service de messagerie le fait) pour que je puisse savoir que vous êtes bien la personne possédant ledit compte.<br/>
         <br/>
-        Un lien est fait entre l'utilisateur et l'étiquette (message déposé dans le tableau de bord) afin de lui permettre de supprimer ses étiquettes, ce lien n'est pas affiché sur l'application. Il y a néanmoins des journeaux qui enregistrent, tentatives de connexions, créations de messages, leur contenu, s'ils ont été supprimés, l'utilisateur et le temps de l'action.<br/>
+        Un lien est fait entre l'utilisateur et l'étiquette afin de lui permettre de supprimer ses étiquettes, ce lien n'est pas affiché sur l'application. Il y a néanmoins des journeaux qui enregistrent, tentatives de connexions, créations de messages, leur contenu, s'ils ont été supprimés, l'utilisateur et le temps de l'action.<br/>
         <br/>
         Un jeton (suite aléatoire de chiffres et de lettres) est enregistré dans les cookies pour reconnaître votre navigateur, s'il n'est plus valable. il est supprimé et vous êtes déconnecté<br/>
         <br/>
-        <b>Vous avez le droit de supprimer votre compte, vous pouvez le faire via la page sécurité</b>, une fois supprimé, vos messages n'appraitrons plus sur le site et la base de données sera vidée de vos informations, cependant des journeaux non accessibles par les utilisateurs garderons la trace de votre passage jusqu'au premier du mois. Ceci afin de permettre plus de sécurité, de résoudre d'éventuels problèmes "bugs" et de réspecter la loi.<br/>
+        <b>Vous avez le droit de supprimer votre compte, après validation de mot de passe, via la page sécurité</b>, une fois supprimé, vos messages n'appraitrons plus sur le site et la base de données sera vidée de vos informations, cependant, des journeaux non accessibles par les utilisateurs garderons la trace de votre passage jusqu'au premier du mois à 00h01 GMT+1. Ceci afin de permettre plus de sécurité, de résoudre d'éventuels problèmes "bugs" et de réspecter la loi.<br/>
         <br/>
         <b>Vous avez le droit de télécharger vos données en cliquant sur le bouton "Télécharger mes données" dans le panel après validation de votre mot de passe.</b><br/>
         <br/>
-        Si vous n'avez pas de comptes, rien n'est enregistré sur vous mise à part les journeaux du serveur web comme n'importe quel site web.<br/>
+        Si vous n'avez pas de comptes, n'est enregistré sur vous que les journeaux du serveur web comme n'importe quel site web, ces derniers sont supprimés tout les quatres mois, le premier du mois à 00h01 GMT+1. Il est possible que d'autres site web vers lesquels certains de mes liens redirigent enregistrent des données sur vous, cependant, je ne suis pas en pouvoir de l'empêcher, ces services ne m'appartiennent pas, si vous ne souhaitez pas qu'ils vous enregistrent, ne les visitez pas.<br/>
         <br/>
-        Les données sont hébergée en Suisse, dans mon appartement dans le canton de Neuchâtel. Les données sont chiffrés quand elles passent sur le réseau et ne passent en théorie que entre mon serveur et votre terminal (votre ordianteur, smartphone ou autres appareil que vous auriez utilisé).<br/>
+        Les données sont hébergée en Suisse, dans mon appartement dans le canton de Neuchâtel. Les données sont chiffrés quand elles passent sur le réseau et ne passent en théorie que entre mon serveur, votre terminal (votre ordianteur, smartphone ou autres appareil que vous auriez utilisé) et des services tiers que vous utilisez, par exemple si vous utilisez un service de messagerie, il est possible qu'il enregistre des informations.<br/>
         <br/>
-        Le code source de cette application Web est disponible sur la platforme GitHub, vous pouvez lire le code, proposer des améliorations ou le modifier. Il ne sera modifié sur mon serveur que après ma relécture. Il est sous license libre.<br/>
+        Le code source de cette application web est disponible sur la platforme GitHub, vous pouvez lire le code, proposer des améliorations ou le modifier. Il ne sera modifié sur mon serveur que après ma relécture. Il est sous license libre.<br/>
         Plus d'informations sur <a  target="_blank" href="https://github.com/spoutnik911/affichage_numerique_web/">https://github.com/spoutnik911/affichage_numerique_web/</a><br/>
-        <br>
+        <br/>
+        <b>Particularité du compte de teste:</b><br/>
+        Un compte de teste est disponible pour un certain nombre d'utilisateurs (ceux qui ont le mot de passe qui sera affiché publiquement), ce compte peut observer les étiquettes mais ne peut rien envoyer ou modifier. les logs enregistrent néanmoins les activités de connexion de celui-ci. Comme avec tout autres comptes, les journeaux de l'application sont supprimés le premier du mois à 00h01 GMT+1. Il reste néamoins les journeaux globaux qui sont actifs et supprimé tout les quatres mois, le premier du mois à 00h01 GMT+1.<br/>
+        <br/>
         Pour toutes autres demandes, vous pouvez me contacter via mon adresse mail disponible sur <a href="https://nadirfelder.com">nadirfelder.com</a> dans l'onglet "Contact".</div>
         <br/>
     </div>
